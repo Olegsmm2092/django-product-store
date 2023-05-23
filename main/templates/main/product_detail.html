@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h1>Product Detail</h1>
+    <div>
+      <h3>Name: {{ product.product_name }}</h3>
+      <p>Price: {{ product.product_price }}</p>
+      <p>Size: {{ product.product_size }}</p>
+    </div>
+    <div>
+      <a href="{% url 'main:product_update' pk=product.pk %}" class="btn btn-primary">Update</a>
+      <a href="{% url 'main:product_delete' pk=product.pk %}" class="btn btn-danger">Delete</a>
+      <a href="{% url 'main:product_list' %}" class="btn btn-secondary">Back to List</a>
+    </div>
+  </div>
+{% endblock %}

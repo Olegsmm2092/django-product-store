@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h1>Create Product</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <!-- <div class="form-group">
+        <label for="id_name">Name:</label>
+        <input type="text" name="name" id="id_name" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="id_price">Price:</label>
+        <input type="number" name="price" id="id_price" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="id_size">Size:</label>
+        <input type="number" name="size" id="id_size" class="form-control" required>
+      </div> -->
+      <button type="submit" class="btn btn-primary">Create</button>
+      <a href="{% url 'main:product_list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+  </div>
+{% endblock %}

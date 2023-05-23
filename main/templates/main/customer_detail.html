@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h1>Customer Details</h1>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ customer.customer_name }}</h5>
+        <p class="card-text">Address: {{ customer.address }}</p>
+      </div>
+    </div>
+    <a href="{% url 'main:customer_update' customer.pk %}" class="btn btn-primary mt-3">Edit</a>
+    <a href="{% url 'main:customer_delete' customer.pk %}" class="btn btn-danger mt-3">Delete</a>
+  </div>
+{% endblock %}

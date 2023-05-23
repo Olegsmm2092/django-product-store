@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h1>Customer Product Detail</h1>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Customer: {{ customer.customer_name }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Product: {{ product.product_name }}</h6>
+        <p class="card-text">Price: ${{ product.product_price }}</p>
+        <p class="card-text">Size: {{ product.product_size }}</p>
+        <a href="{% url 'main:customer_list' %}" class="btn btn-secondary">Back to List</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
